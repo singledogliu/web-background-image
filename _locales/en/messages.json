@@ -1,0 +1,65 @@
+{
+    "extension_name": {
+        "description": "Name",
+        "message": "CHANG BACKGOUNDIMAGE"
+    },
+    "extension_shortname": {
+        "description": "ShortName",
+        "message": "BACKGOUNDIMAGE"
+    },
+    "extension_desc": {
+        "description": "desc",
+        "message": "change brower`s background,a image or multipe image"
+    },
+    "extension_author": {
+        "descriptino": "authorName",
+        "message": "XIXIZhou I Moon Over You"
+    },
+    "extension_title": {
+        "message": "BACKGOUNDIMAGE"
+    },
+    "settings": {
+        "description": "desc",
+        "message": "SETTINGS"
+    },
+    "single_image_url": {
+        "description": "desc",
+        "message": "IMAGE URL"
+    },
+    "single_image_tips": {
+        "description": "desc",
+        "message": "When it`s empty,slieds or default will be work"
+    },
+    "multiple_image_url": {
+        "description": "desc",
+        "message": "IMAGES URL"
+    },
+    "multiple_image_tips": {
+        "description": "desc",
+        "message": "Multiple image url separated by commas(,)"
+    },
+    "opacity": {
+        "description": "desc",
+        "message": "OPACITY"
+    },
+    "opacity_tips": {
+        "description": "desc",
+        "message": "Please input a value between 0 and 1,The default vaule is 0.1"
+    },
+    "interval_time": {
+        "description": "desc",
+        "message": "PICTURE SWITCHING INTERVAL"
+    },
+    "interval_time_tips": {
+        "description": "desc",
+        "message": "Unit is minute,the default is 3 minutes"
+    },
+    "apply": {
+        "description": "desc",
+        "message": "APPLY"
+    },
+    "default": {
+        "description": "desc",
+        "message": "DEFAULT"
+    }
+}

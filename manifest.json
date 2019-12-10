@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_extension_name__",
+    "short_name": "__MSG_extension_shortname__",
+    "description": "__MSG_extension_desc__",
+    "author": "__MSG_extension_author__",
+    "default_locale": "zh_CN",
+    "version": "1.0.0.0",
+    "icons": {
+        "16": "/IMAGES/n16.png",
+        "32": "/IMAGES/n32.png",
+        "48": "/IMAGES/n48.png",
+        "128": "/IMAGES/n128.png"
+    },
+    "browser_action": {
+        "default_icon": "/IMAGES/n32.png",
+        "default_popup": "popup.html",
+        "default_title": "__MSG_extension_title__"
+    },
+    "options_ui": {
+        "page": "popup.html",
+        "chrome_style": true
+    },
+    "background": {
+        "scripts": [
+            "/JS/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "all_frames": false,
+            "js": [
+                "/JS/jquery-3.4.1.min.js",
+                "/JS/changeBackground.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query"
+}

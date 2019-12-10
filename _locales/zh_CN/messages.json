@@ -1,0 +1,65 @@
+{
+    "extension_name": {
+        "description": "Name",
+        "message": "页面背景设置"
+    },
+    "extension_shortname": {
+        "description": "ShortName",
+        "message": "页面背景"
+    },
+    "extension_desc": {
+        "description": "desc",
+        "message": "给网页添加一张背景图片，可多张轮播"
+    },
+    "extension_author": {
+        "descriptino": "authorName",
+        "message": "茜茜你的美丽传说"
+    },
+    "extension_title": {
+        "message": "网页背景图设置"
+    },
+    "settings": {
+        "description": "desc",
+        "message": "设置"
+    },
+    "single_image_url": {
+        "description": "desc",
+        "message": "单张图片地址"
+    },
+    "single_image_tips": {
+        "description": "desc",
+        "message": "为空则使用轮播或默认"
+    },
+    "multiple_image_url": {
+        "description": "desc",
+        "message": "多张图片地址"
+    },
+    "multiple_image_tips": {
+        "description": "desc",
+        "message": "多个地址以逗号隔开"
+    },
+    "opacity": {
+        "description": "desc",
+        "message": "透明度"
+    },
+    "opacity_tips": {
+        "description": "desc",
+        "message": "请输入一个0~1之间的数值，默认为0.1"
+    },
+    "interval_time": {
+        "description": "desc",
+        "message": "图片切换间隔时间"
+    },
+    "interval_time_tips": {
+        "description": "desc",
+        "message": "单位为分钟,默认为3分钟"
+    },
+    "apply": {
+        "description": "desc",
+        "message": "应用"
+    },
+    "default": {
+        "description": "desc",
+        "message": "恢复默认"
+    }
+}

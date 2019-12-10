@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+}
+
+p {
+    font-size: 7.em;
+}
+
+h2 {
+    font-weight: bolder;
+}
+
+a {
+    color: black;
+}
+
+.input_over {
+    background: black;
+    color: whitesmoke;
+}
+
+#settingsboxinput {
+  text-align: center;
+  padding: 20px 30px;
+}
+
+#setting_head {
+    font-weight: bolder;
+    font-size: large;
+}
+
+#setting_btn {
+    margin-top: 10px;
+}
+
+#success {
+    display: none;
+}
+
+#default_setting_btn {
+    margin-top: 10%;
+}
+
+textarea {
+    resize: none;
+}
+
+::-webkit-scrollbar {
+width: 0px;
+display: none;
+}
