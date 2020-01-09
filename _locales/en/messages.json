@@ -1,65 +1,81 @@
 {
     "extension_name": {
-        "description": "Name",
+        "description": "扩展名称",
         "message": "CHANG BACKGOUNDIMAGE"
     },
     "extension_shortname": {
-        "description": "ShortName",
+        "description": "扩展短名称",
         "message": "BACKGOUNDIMAGE"
     },
     "extension_desc": {
-        "description": "desc",
+        "description": "扩展描述",
         "message": "change brower`s background,a image or multipe image"
     },
     "extension_author": {
-        "descriptino": "authorName",
+        "descriptino": "作者姓名",
         "message": "XIXIZhou I Moon Over You"
     },
     "extension_title": {
         "message": "BACKGOUNDIMAGE"
     },
     "settings": {
-        "description": "desc",
+        "description": "设置",
         "message": "SETTINGS"
     },
+    "detailed_tutorial": {
+        "description": "详细教程",
+        "message": "DETAILED TUTORIAL"
+    },
     "single_image_url": {
-        "description": "desc",
+        "description": "单张图片地址",
         "message": "IMAGE URL"
     },
     "single_image_tips": {
-        "description": "desc",
+        "description": "单张图片提示",
         "message": "When it`s empty,slieds or default will be work"
     },
     "multiple_image_url": {
-        "description": "desc",
+        "description": "多张图片",
         "message": "IMAGES URL"
     },
     "multiple_image_tips": {
-        "description": "desc",
+        "description": "多张图片提示",
         "message": "Multiple image url separated by commas(,)"
     },
+    "replacement_mode": {
+        "description": "图片更换方式",
+        "message": "REPLACEMENT MODE"
+    },
+    "order": {
+        "description": "顺序更换",
+        "message": "order"
+    },
+    "random": {
+        "description": "随机更换",
+        "message": "random"
+    },
     "opacity": {
-        "description": "desc",
+        "description": "透明度",
         "message": "OPACITY"
     },
     "opacity_tips": {
-        "description": "desc",
+        "description": "透明度提示",
         "message": "Please input a value between 0 and 1,The default vaule is 0.1"
     },
     "interval_time": {
-        "description": "desc",
+        "description": "图片更换间隔时间",
         "message": "PICTURE SWITCHING INTERVAL"
     },
     "interval_time_tips": {
-        "description": "desc",
+        "description": "图片更换间隔时间提示",
         "message": "Unit is minute,the default is 3 minutes"
     },
     "apply": {
-        "description": "desc",
+        "description": "应用",
         "message": "APPLY"
     },
     "default": {
-        "description": "desc",
+        "description": "恢复默认",
         "message": "DEFAULT"
     }
 }

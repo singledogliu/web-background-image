@@ -1,37 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html dir="ltr" lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="CSS/popup.css">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="CSS/popup.css" rel="stylesheet">
     <script src="JS/jquery-3.4.1.min.js"></script>
     <script src="JS/popup.js"></script>
     <title>__MSG_settings__</title>
 </head>
 
 <body>
-    <div id="setting_head">
-        <h1>__MSG_settings__</h1>
-        <a href="#" id="guide">详细教程</a>
-    </div>
-    <div id="settingsboxinput">
-        <h2>__MSG_single_image_url__</h2>
-        <input type="text" id="image">
-        <p>__MSG_single_image_tips__</p>
-        <h2>__MSG_multiple_image_url__</h2>
-        <p>__MSG_multiple_image_tips__</p>
-        <textarea id="images" rows="8" autofocus></textarea><br>
-        <h2>__MSG_opacity__</h2>
-        <p>__MSG_opacity_tips__</p>
-        <input type="text" id="setting_opacity"><br>
-        <h2>__MSG_interval_time__</h2>
-        <p>__MSG_interval_time_tips__</p>
-        <input type="text" id="interval_time"><br>
-        <button class="input_out" id="setting_btn">__MSG_apply__</button><br>
-        <button class="input_out" id="default_setting_btn">__MSG_default__</button>
-    </div>
+<div id="setting_head">
+    <h1>__MSG_settings__</h1>
+    <a href="#" id="guide">__MSG_detailed_tutorial__</a>
+</div>
+<div id="settingsboxinput">
+    <h2>__MSG_single_image_url__</h2>
+    <input id="image" type="text">
+    <p>__MSG_single_image_tips__</p>
+    <h2>__MSG_multiple_image_url__</h2>
+    <p>__MSG_multiple_image_tips__</p>
+    <textarea autofocus id="images" rows="8"></textarea><br>
+    <h2>__MSG_replacement_mode__</h2>
+    <span id = "replacement_mode">
+        <label><input id="order" name="replacement_mode" type="radio" value="order">__MSG_order__</label>
+        <label><input id="random" name="replacement_mode" type="radio" value="random" checked>__MSG_random__</label>
+        </span>
+    <h2>__MSG_opacity__</h2>
+    <p>__MSG_opacity_tips__</p>
+    <input id="setting_opacity" type="text"><br>
+    <h2>__MSG_interval_time__</h2>
+    <p>__MSG_interval_time_tips__</p>
+    <input id="interval_time" type="text"><br>
+    <button class="input_out" id="setting_btn">__MSG_apply__</button>
+    <br>
+    <button class="input_out" id="default_setting_btn">__MSG_default__</button>
+</div>
 </body>
 
 </html>

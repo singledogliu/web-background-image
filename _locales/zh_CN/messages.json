@@ -22,6 +22,10 @@
         "description": "desc",
         "message": "设置"
     },
+    "detailed_tutorial": {
+        "description": "Detailed tutorial",
+        "message": "详细教程"
+    },
     "single_image_url": {
         "description": "desc",
         "message": "单张图片地址"
@@ -37,6 +41,18 @@
     "multiple_image_tips": {
         "description": "desc",
         "message": "多个地址以逗号隔开"
+    },
+    "replacement_mode": {
+        "description": "Replacement mode",
+        "message": "图片更换方式"
+    },
+    "order": {
+        "description": "order",
+        "message": "顺序更换"
+    },
+    "random": {
+        "description": "random",
+        "message": "随机更换"
     },
     "opacity": {
         "description": "desc",

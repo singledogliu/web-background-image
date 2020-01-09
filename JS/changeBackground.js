@@ -4,6 +4,7 @@ var imgsURL = [];
 var defaultOpacity = 0.1;
 var opacity = 0.1;
 var interval_time = 3;
+var orderIndex = 0;       //顺序更换图片时图片地址在数组中的位置
 
 jQuery(document).ready(function ($) {
 
@@ -25,7 +26,7 @@ jQuery(document).ready(function ($) {
     // 读取本地设置数据
     function getStorage() {
         chrome.storage.sync.get({
-            imgURL_storage: "", imgsURL_storage: [], opacity_storage: 0.1, interval_time_storage: 1
+            imgURL_storage: "", imgsURL_storage: [], opacity_storage: 0.1, interval_time_storage: 1, replacement_mode_storage: "order"
         }, function (items) {
             if (items.imgURL_storage != 0) {
                 imgURL = items.imgURL_storage;
@@ -45,6 +46,7 @@ jQuery(document).ready(function ($) {
             else {
                 imgsURL = [];
             }
+            replacement_mode = items.replacement_mode_storage;
             setBackground();
         });
     }
@@ -79,6 +81,12 @@ jQuery(document).ready(function ($) {
                 //定时（interval_time_true分钟）更换背景图片
                 task1 = setInterval(function () {
                     changeBackgroundImage();
+                    if (replacement_mode === "order") {
+                        orderIndex++;
+                        if (orderIndex == img.length) {
+                            orderIndex = 0;
+                        }
+                    }
                 }, interval_time_true);
             }
         }
@@ -86,14 +94,21 @@ jQuery(document).ready(function ($) {
             setBackgroundImage(imgURL);
         }
 
-        // 随机更换一张壁纸
+        // 更换一张壁纸(顺序or随机)
         function changeBackgroundImage() {
-            var serial_number = Math.floor(Math.random() * img.length);
-            var Iimg = img[serial_number];
-            //右下角背景
-            bac.style.background = "url(" + Iimg + ")";
-            bac.style.backgroundPosition = "50% 50%";
-            bac.style.backgroundRepeat = "no-repeat";
+            var Iimg = "";
+            var serial_number = "";
+            // 随机更换
+            if (replacement_mode === "random") {
+                serial_number = Math.floor(Math.random() * img.length);
+            }
+            // 顺序更换
+            else {
+                serial_number = orderIndex;
+            }
+
+            Iimg = img[serial_number];
+            setBackgroundImage(Iimg);
         }
 
         // 设置单张背景
@@ -108,7 +123,7 @@ jQuery(document).ready(function ($) {
   
     chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         if (request.cmd === 'reload') {
-            if (task1 != "") {
+            if (task1 !== "") {
                 clearInterval(task1);
             }
             getStorage();
