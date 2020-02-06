@@ -26,21 +26,13 @@
         "description": "详细教程",
         "message": "DETAILED TUTORIAL"
     },
-    "single_image_url": {
-        "description": "单张图片地址",
+    "images_url": {
+        "description": "图片地址",
         "message": "IMAGE URL"
     },
-    "single_image_tips": {
-        "description": "单张图片提示",
-        "message": "When it`s empty,slieds or default will be work"
-    },
-    "multiple_image_url": {
-        "description": "多张图片",
-        "message": "IMAGES URL"
-    },
-    "multiple_image_tips": {
-        "description": "多张图片提示",
-        "message": "Multiple image url separated by commas(,)"
+    "images_tips": {
+        "description": "图片地址提示",
+        "message": "One image address one input"
     },
     "replacement_mode": {
         "description": "图片更换方式",
@@ -77,5 +69,9 @@
     "default": {
         "description": "恢复默认",
         "message": "DEFAULT"
+    },
+    "delete_tip": {
+        "description": "页面背景设置提示：至少需要一个图片地址输入框",
+        "message": "a tip of CHANG BACKGOUNDIMAGE:need a image input at least"
     }
 }

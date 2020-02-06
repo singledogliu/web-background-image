@@ -26,21 +26,13 @@
         "description": "Detailed tutorial",
         "message": "详细教程"
     },
-    "single_image_url": {
+    "images_url": {
         "description": "desc",
-        "message": "单张图片地址"
+        "message": "图片地址"
     },
-    "single_image_tips": {
+    "images_tips": {
         "description": "desc",
-        "message": "为空则使用轮播或默认"
-    },
-    "multiple_image_url": {
-        "description": "desc",
-        "message": "多张图片地址"
-    },
-    "multiple_image_tips": {
-        "description": "desc",
-        "message": "多个地址以逗号隔开"
+        "message": "一个输入框一个地址"
     },
     "replacement_mode": {
         "description": "Replacement mode",
@@ -71,11 +63,15 @@
         "message": "单位为分钟,默认为3分钟"
     },
     "apply": {
-        "description": "desc",
+        "description": "apply",
         "message": "应用"
     },
     "default": {
-        "description": "desc",
+        "description": "default",
         "message": "恢复默认"
+    },
+    "delete_tip": {
+        "description": "need a input at least",
+        "message": "页面背景设置提示：至少需要一个图片地址输入框"
     }
 }

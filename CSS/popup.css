@@ -14,9 +14,13 @@ a {
     color: black;
 }
 
-.input_over {
-    background: black;
-    color: whitesmoke;
+.input_out {
+    background: whitesmoke;
+    color: black;
+}
+
+#images input {
+    width: 135px;
 }
 
 #settingsboxinput {
@@ -33,19 +37,19 @@ a {
     margin-top: 10px;
 }
 
-#success {
+/* #success {
     display: none;
-}
+} */
 
 #default_setting_btn {
     margin-top: 10%;
 }
 
-textarea {
+/* textarea {
     resize: none;
-}
+} */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 width: 0px;
 display: none;
-}
+} */
