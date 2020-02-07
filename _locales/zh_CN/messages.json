@@ -70,8 +70,12 @@
         "description": "default",
         "message": "恢复默认"
     },
-    "delete_tip": {
+    "delete_warn": {
         "description": "need a input at least",
-        "message": "页面背景设置提示：至少需要一个图片地址输入框"
+        "message": "至少需要一个图片地址输入框"
+    },
+    "empty_input_warn":{
+        "description": "some input is empty,please input address or delete the input",
+        "message": "有输入框为空，请输入内容或删除多余输入框"
     }
 }

@@ -59,17 +59,28 @@ function setInputsCountToLocalStroage(inputs_count_storage) {
         });
 }
 
+/**自定义对话框 */
+function _alert(message) {
+    let dialog = document.getElementById("dialog");
+    let message_html = document.createElement("p");
+    message_html.innerText = message;
+    $("#message").text(message);
+    dialog.style.display = "block";
+}
+
 /**删除输入框 */
 function deleteEvent(e) {
-    if (Object.keys(inputs).length === 1) {
-        sendMessageToContentScript({ cmd: "warn", message: chrome.i18n.getMessage("delete_tip") });
-        // alert(chrome.i18n.getMessage("delete_tip"));
+    if (inputs_count === 1) {
+        _alert(chrome.i18n.getMessage("delete_warn"));
     }
     else {
         let key = e.path[1].id;
         e.path[2].removeChild(e.path[1]);
         inputs_count--;
-        delete inputs[e.path[1].id];
+        // 如果inputs对象中有这个属性则删除
+        if (inputs.hasOwnProperty(key)) {
+            delete inputs[key];
+        }
         setInputsCountToLocalStroage(inputs_count);
         chrome.storage.sync.set({
             inputs_storage: inputs
@@ -92,6 +103,7 @@ jQuery(document).ready(function ($) {
             if (keys.length > 0) {
                 inputs = items.inputs_storage;
             }
+            console.log(inputs);
             if (items.inputs_count_storage >= 1) {
                 inputs_count = items.inputs_count_storage;
             }
@@ -115,9 +127,10 @@ jQuery(document).ready(function ($) {
             document.getElementsByName("replacement_mode").innerHTML = nodes;
 
             // 更新图片输入框
-            for (let i = 0; i < keys.length; i++) {
+            for (let i = 0; i < inputs_count; i++) {
                 let element = document.createElement("div");
-                element.innerHTML = "<input type='text' value='" + inputs[keys[i]].url + "'><img src='/IMAGES/sub.png' alt='delete' class='delete'>"
+                let image_url = i < keys.length ? inputs[keys[i]].url : "";
+                element.innerHTML = "<input type='text' value='" + image_url + "'><img src='/IMAGES/sub.png' alt='delete' class='delete'>"
                 element.className = "image";
                 element.setAttribute("id", "image" + i);
                 document.getElementById("images").insertBefore(element, document.getElementById("add"));
@@ -139,7 +152,7 @@ jQuery(document).ready(function ($) {
     $("#add").on("click", function () {
         inputs_count++;
         let element = document.createElement("div");
-        element.innerHTML = "<input type='text'><img src='/IMAGES/sub.png' alt='delete' class='delete'>"
+        element.innerHTML = "<input type='text' autofocus><img src='/IMAGES/sub.png' alt='delete' class='delete'>"
         element.className = "image";
         element.setAttribute("id", "image" + inputs_count - 1);
         document.getElementById("images").insertBefore(element, document.getElementById("add"));
@@ -170,7 +183,7 @@ jQuery(document).ready(function ($) {
         let imagesInfo = document.getElementsByClassName("image");
         for (let i = 0; i < imagesInfo.length; i++) {
             if (imagesInfo[i].firstChild.value == "" || imagesInfo[i].firstChild.value == null) {
-                alert("有输入框为空，请输入内容或删除多余输入框");
+                _alert(chrome.i18n.getMessage("empty_input_warn"));
                 hasEmpty = true;
                 break;
             }
@@ -227,5 +240,12 @@ jQuery(document).ready(function ($) {
     $("#guide").on("click", function () {
         bg.goToGuidePage();
     });
+
+
+    /**清空并隐藏对话框 */
+    document.getElementById("ensure").addEventListener("click", function () {
+        dialog.style.display = "none";
+    });
+
 });
 
