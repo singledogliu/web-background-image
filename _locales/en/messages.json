@@ -77,5 +77,13 @@
     "empty_input_warn": {
         "description": "有输入框为空，请输入内容或删除多余输入框",
         "message": "some input is empty,please input address or delete the input"
+    },
+    "warn_tip": {
+        "description": "提示",
+        "message": "Tip"
+    },
+    "not_image": {
+        "description": "这不是一张图片",
+        "message": "it is not a image"
     }
 }

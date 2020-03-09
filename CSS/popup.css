@@ -67,6 +67,14 @@ a {
     bottom: 0;
 }
 
+#interval {
+    display: none;
+}
+
+#replacement_mode_div {
+    display: none;
+}
+
 ::-webkit-scrollbar {
 width: 0px;
 display: none;

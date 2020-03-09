@@ -2,13 +2,13 @@ var defaultImgURL = "http://r.photo.store.qq.com/psb?/V13L31cV41nzmD/GfPRm3GCjN8
 var defaultOpacity = 0.1;
 var opacity = 0.1;
 var interval_time = 3;
-var orderIndex = 0;       //顺序更换图片时图片地址在数组中的位置
+var orderIndex = 0; //顺序更换图片时图片地址在数组中的位置
 // 图片输入框内容组对象
 inputs = new Object();
 // 图片对象
 input = new Object();
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
 
     var task1 = "";
     var node = document.createElement("div");
@@ -28,9 +28,14 @@ jQuery(document).ready(function ($) {
     // 读取本地设置数据
     function getStorage() {
         chrome.storage.sync.get({
-            imgURL_storage: "", imgsURL_storage: [], opacity_storage: 0.1, interval_time_storage: 1,
-            inputs_count_storage: 1, replacement_mode_storage: "order", inputs_storage: inputs,
-        }, function (items) {
+            imgURL_storage: "",
+            imgsURL_storage: [],
+            opacity_storage: 0.1,
+            interval_time_storage: 1,
+            inputs_count_storage: 1,
+            replacement_mode_storage: "order",
+            inputs_storage: inputs,
+        }, function(items) {
             // 输入框对象的key组
             let keys = Object.keys(items.inputs_storage);
             if (keys.length > 0) {
@@ -65,19 +70,17 @@ jQuery(document).ready(function ($) {
         //输入数据（透明度）合法性检测 
         if (opacity >= 0 && opacity <= 1) {
             bac.style.opacity = opacity;
-        }
-        else {
+        } else {
             bac.style.opacity = defaultOpacity;
         }
         /** 判断应该设置单张背景还是多张轮播*/
         //只有一个图片地址
         if (keys.length === 1) {
             setBackgroundImage(inputs[keys[0]].url);
-        }
-        else {
+        } else {
             changeBackgroundImage();
             //定时（interval_time_true分钟）更换背景图片
-            task1 = setInterval(function () {
+            task1 = setInterval(function() {
                 changeBackgroundImage();
                 if (replacement_mode === "order") {
                     orderIndex++;
@@ -114,7 +117,7 @@ jQuery(document).ready(function ($) {
     }
 
 
-    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.cmd === 'reload') {
             if (task1 !== "") {
                 clearInterval(task1);
@@ -128,5 +131,3 @@ jQuery(document).ready(function ($) {
     });
 
 });
-
-

@@ -1,0 +1,9 @@
+{
+    "backgroundCover.autoStatus": true,
+    "backgroundCover.randomImageFolder": "G:\\backgroundimage",
+    "git.autoStash": true,
+    "git.enableSmartCommit": true,
+    "backgroundCover.imagePath": "G:\\backgroundimage\\周茜茜.jpg",
+    "files.autoSave": "onFocusChange",
+    "git.path": "G:\\Git\\Git\\cmd\\git.exe"
+}

@@ -6,7 +6,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="CSS/popup.css" rel="stylesheet">
+    <link rel="stylesheet" href="/layui/css/layui.css.css">
+    <link rel="stylesheet" href="/layer/theme/default/layer.css">
     <script src="JS/jquery-3.4.1.min.js"></script>
+    <script src="/layui/layui.js"></script>
+    <script src="/layer/layer.js"></script>
     <script src="JS/popup.js"></script>
     <title>__MSG_settings__</title>
 </head>
@@ -22,11 +26,14 @@
         <div id="images">
             <img src="/IMAGES/add.png" alt="add" id="add">
         </div>
-        <h2>__MSG_replacement_mode__</h2>
-        <span id="replacement_mode">
-            <label><input id="order" name="replacement_mode" type="radio" value="order">__MSG_order__</label>
-            <label><input id="random" name="replacement_mode" type="radio" value="random" checked>__MSG_random__</label>
-        </span>
+        <div id="replacement_mode_div">
+            <h2>__MSG_replacement_mode__</h2>
+            <span id="replacement_mode">
+                <label><input id="order" name="replacement_mode" type="radio" value="order">__MSG_order__</label>
+                <label><input id="random" name="replacement_mode" type="radio" value="random"
+                        checked>__MSG_random__</label>
+            </span>
+        </div>
         <h2>__MSG_opacity__</h2>
         <p>__MSG_opacity_tips__</p>
         <input id="setting_opacity" type="text"><br>
@@ -38,10 +45,6 @@
         <button class="input_out" id="setting_btn">__MSG_apply__</button>
         <br>
         <button class="input_out" id="default_setting_btn">__MSG_default__</button>
-    </div>
-    <div id="dialog">
-        <b id="message"></b><br><br>
-        <button id="ensure">确定</button>
     </div>
 </body>
 
