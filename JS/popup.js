@@ -172,7 +172,7 @@ jQuery(document).ready(function($) {
             for (let i = 0; i < inputs_count; i++) {
                 let element = document.createElement("div");
                 let image_url = i < keys.length ? inputs[keys[i]].url : "";
-                element.innerHTML = "<input type='text' value='" + image_url + "' class='image' id='image" + i + "'><img src='/IMAGES/sub.png' alt='delete' class='delete'>"
+                element.innerHTML = `<input type="text" value=${image_url} class="image" id=image${i}><img src="/IMAGES/sub.png" alt="delete" class="delete">`
                 document.getElementById("images").insertBefore(element, document.getElementById("add"));
                 element.lastChild.addEventListener("click", function(e) {
                     deleteEvent(e);
@@ -195,7 +195,7 @@ jQuery(document).ready(function($) {
     $("#add").on("click", function() {
         inputs_count++;
         let element = document.createElement("div");
-        element.innerHTML = "<input type='text' autofocus class='image' id='image" + (inputs_count - 1) + "'><img src='/IMAGES/sub.png' alt='delete' class='delete'>"
+        element.innerHTML = `<input type='text' autofocus class='image' id=image${(inputs_count - 1)}><img src='/IMAGES/sub.png' alt='delete' class='delete'>`
         document.getElementById("images").insertBefore(element, document.getElementById("add"));
         element.lastChild.addEventListener("click", function(e) {
             deleteEvent(e);
