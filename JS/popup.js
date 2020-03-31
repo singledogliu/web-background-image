@@ -113,7 +113,6 @@ function isImage(e) {
             type: "HEAD",
             url: url,
             complete: (response, data) => {
-                console.log(response);
                 console.log(response.getAllResponseHeaders())
                 if (response.getResponseHeader("Content-type") == null || response.getResponseHeader("Content-type").search("image") == -1) {
                     layer.tips(chrome.i18n.getMessage("not_image"), "#" + e.target.id, {
@@ -172,7 +171,7 @@ jQuery(document).ready(function($) {
             for (let i = 0; i < inputs_count; i++) {
                 let element = document.createElement("div");
                 let image_url = i < keys.length ? inputs[keys[i]].url : "";
-                element.innerHTML = `<input type="text" value=${image_url} class="image" id=image${i}><img src="/IMAGES/sub.png" alt="delete" class="delete">`
+                element.innerHTML = `<input type="text" class="image" id=image${i} value=${image_url}><img src="/IMAGES/sub.png" alt="delete" class="delete">`
                 document.getElementById("images").insertBefore(element, document.getElementById("add"));
                 element.lastChild.addEventListener("click", function(e) {
                     deleteEvent(e);
@@ -197,9 +196,11 @@ jQuery(document).ready(function($) {
         let element = document.createElement("div");
         element.innerHTML = `<input type='text' autofocus class='image' id=image${(inputs_count - 1)}><img src='/IMAGES/sub.png' alt='delete' class='delete'>`
         document.getElementById("images").insertBefore(element, document.getElementById("add"));
+        // 监听删除按钮的点击事件
         element.lastChild.addEventListener("click", function(e) {
             deleteEvent(e);
         });
+        // 失去焦点时检查连接是否为图片
         element.addEventListener('focusout', function(e) {
             isImage(e);
         });
@@ -279,6 +280,11 @@ jQuery(document).ready(function($) {
                 // 向changeBackground.js发送消息以是新设置得以应用
                 sendMessageToContentScript({ cmd: "reload" });
             });
+    });
+
+    // 跳转到教程页面
+    $("#guide").on("click", function() {
+        bg.goToGuidePage();
     });
 
 });
